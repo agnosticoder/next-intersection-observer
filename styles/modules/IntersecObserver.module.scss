@@ -1,0 +1,32 @@
+.container{
+    // height: 400vh;
+}
+
+.one{
+    border: 1px solid rgb(226, 199, 199);
+    background-color: rgb(104, 92, 76);
+    height: 150vh;
+    margin-bottom: 30px;
+    color: #eee;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.two{
+    border: 1px solid rgb(219, 190, 190);
+    background-color: rgb(116, 120, 129);
+    height: 80vh;
+    color: #eee;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        font-size: 100px;
+    }
+}

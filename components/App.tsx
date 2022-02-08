@@ -1,9 +1,11 @@
 import styles from '../styles/modules/Hello.module.scss';
+import IntersecObserver from './IntersecObserver.js';
 
 const App = () => {
     return (
         <div className={styles.container}>
-            <h2 className={styles.test}>Content color has bee applied using css modules but using scss</h2>
+            <h2 className={styles.test}>Intersection Observer</h2>
+            <IntersecObserver />
         </div>
     );
 };
