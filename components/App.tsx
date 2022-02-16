@@ -1,5 +1,5 @@
 import styles from '../styles/modules/Hello.module.scss';
-import IntersecObserver from './IntersecObserver.js';
+import IntersecObserver from './IntersecObserver';
 
 const App = () => {
     return (

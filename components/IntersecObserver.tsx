@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 import styles from '../styles/modules/IntersecObserver.module.scss';
 
 const useOnScreen = () => {
-    const [visible, setVisible] = useState(false);
+    const [visible, setVisible] = useState<boolean>(false);
     //* we can also use the useState to store the ref of element by passing setState to ref
-    const ref = useRef();
+    const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -16,17 +16,20 @@ const useOnScreen = () => {
         );
 
         //* observe the current element
-        observer.observe(ref?.current);
-
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
 
         //* cleanup
         return () => {
-            observer.unobserve(ref?.current);
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
         };
     }, [ref]);
 
-    return [visible, ref];
-}
+    return [visible, ref] as const;
+};
 
 const IntersecObserver = () => {
 
